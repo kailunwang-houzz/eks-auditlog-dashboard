@@ -379,7 +379,7 @@
     {
       "datasource": {
         "type": "cloudwatch",
-        "uid": "${DS_CLOUDWATCH-STAGING}"
+        "uid": "${DS_CLOUDWATCH-LOL}"
       },
       "fieldConfig": {
         "defaults": {
@@ -558,7 +558,7 @@
         {
           "datasource": {
             "type": "cloudwatch",
-            "uid": "${DS_CLOUDWATCH-STAGING}"
+            "uid": "${DS_CLOUDWATCH-LOL}"
           },
           "dimensions": {},
           "expression": "fields @timestamp, @message\n| sort @timestamp desc\n| limit 100\n| filter requestURI not like \"vault\"\n| filter requestURI not like \"istio\"\n| filter requestURI not like \"balancer\"\n| filter verb like /(create|delete|update)/\n| filter objectRef.resource=\"configmaps\" \n",
